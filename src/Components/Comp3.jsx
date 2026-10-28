@@ -6,17 +6,24 @@ export default function Comp3() {
   let [age, setage] = useState(25);
 
   // This Will Be called on component mount as well as whenever their is a change in a state variable
-  useEffect(function () {
-    console.log("Use Effect Hook Called ", count, name, age);
-  });
+  // useEffect(function () {
+  //   console.log("Use Effect Hook Called ", count, name, age);
+  // });
+
+  // this use effect get called only once even if stage get changes
+   useEffect(function () {
+     console.log("Use Effect Hook Called ", count, name, age);
+   },[]);
+  
   function myFunction1() {
     setcount(count + 1);
   }
   function myFunction2() {
-    setname("Wenusday");
+    setage(age + 2);
   }
   function myFunction3() {
-    setage(age + 2);
+    
+    setname("Wenusday");
   }
   return (
     <div className="w-6xl mx-auto p-4">
