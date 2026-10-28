@@ -11,9 +11,16 @@ export default function Comp3() {
   // });
 
   // this use effect get called only once even if stage get changes
-   useEffect(function () {
-     console.log("Use Effect Hook Called ", count, name, age);
-   },[]);
+  //  useEffect(function () {
+  //    console.log("Use Effect Hook Called ", count, name, age);
+  //  },[]);
+
+  useEffect(function () {
+    console.log("Use Effect Hook Called ", count, name, age);
+    return () => {
+       console.log("Component unmounted !");
+     }
+  }, []);
   
   function myFunction1() {
     setcount(count + 1);
