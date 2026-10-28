@@ -1,43 +1,38 @@
-
 import React, { useState } from "react";
 
 export default function Comp2(props) {
-  const [p1, setP1] = useState(props.p1);
-  const [userName, setUserName] = useState("root");
+  let [count] = useState(100);
+  let [Brands] = useState(["H&M", "Playboy"]);
+  let [name] = useState("Modi", "Putin");
+  let [info] = useState({ place: "Rome" });
+  let [status] = useState(true);
 
-  function myfunction() {
-    setP1(200);
+  // 1. Initialize local state using the prop value as the starting point
+  const [valueP1, setValueP1] = useState(props.p1);
+
+  let userName = "root";
+
+  function myFunction() {
+    // 2. Use the setter function to update state instead of mutating directly
+    setValueP1(200);
   }
-
-  function myfunction1() {
-    setUserName("joroot");
+  function myFunction() {
+    userName = "Aditya";
   }
 
   return (
-    <div className="w-xl mx-auto p-4">
-      <h1 className="text-center uppercase text-2xl">
-        Props Vs State
-      </h1>
-
+    <div className="w-6xl mx-auto p-4">
+      <h1 className="text-center uppercase text-2xl">Props And Border</h1>
       <p>
-        Props value: {p1} {props.p2}
+        Props Values={valueP1}
+        {props.p2}
       </p>
-
-      <button
-        onClick={myfunction}
-        className="border p-3"
-      >
-        Update Props Value
+      {/* 3. Pass the function by name (without parentheses) */}
+      <button onClick={myFunction} className="border p-3">
+        Change Value
       </button>
-
-      <p>Local Variable: {userName}</p>
-
-      <button
-        onClick={myfunction1}
-        className="border p-3"
-      >
-        Update User Name
-      </button>
+      <p>localVariable={userName}</p>
+      <button onClick={myFunction} className="border p-3"></button>
     </div>
   );
 }
