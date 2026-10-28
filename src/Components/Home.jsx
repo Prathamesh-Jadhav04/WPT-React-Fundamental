@@ -1,6 +1,20 @@
-import React from 'react'
+import React, { useEffect } from "react";
+import axios from "axios";
 
 export default function Home() {
+  useEffect(function () {
+    //  Call by Multipal API;
+    Promise.allSettled([
+      axios.get("https://fakestoreapi.com/products"),
+      axios.get("https://fakestoreapi.com/products/categories"),
+    ])
+      .then(function (res) {
+        console.log(res);
+      })
+      .catch(function (err) {
+        console.log(err);
+      });
+  });
   return (
     <div class="w-sm lg:w-6xl mx-auto pt-2 pb-2 grid gird-cols-1 lg:grid-cols-[25%_75%]">
       <aside class="p-3">
