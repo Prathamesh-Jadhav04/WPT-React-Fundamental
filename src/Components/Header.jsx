@@ -42,7 +42,7 @@ function Header() {
       {/* Banner */}
       <figure className="w-full lg:w-6xl mx-auto pt-2 pb-2">
         <img
-          className="w-full animate__animated animate__rubberBand"
+          className="w-full animate__animated animate__rubberBand "
           src="https://cmsimagesv2.shoppersstop.com/V1_Web_98bcd69c70/V1_Web_98bcd69c70.jpg"
           alt="Watches collection"
         />
