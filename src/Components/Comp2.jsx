@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 export default function Comp2(props) {
-  let [count] = useState(100);
+  let [count,setCount] = useState(100);//dispatcher Function
   let [Brands] = useState(["H&M", "Playboy"]);
   let [name] = useState("Modi", "Putin");
   let [info] = useState({ place: "Rome" });
@@ -16,8 +16,8 @@ export default function Comp2(props) {
     // 2. Use the setter function to update state instead of mutating directly
     setValueP1(200);
   }
-  function myFunction() {
-    userName = "Aditya";
+  function myFunction2() {
+    setCount(count++);
   }
 
   return (
@@ -32,7 +32,9 @@ export default function Comp2(props) {
         Change Value
       </button>
       <p>localVariable={userName}</p>
-      <button onClick={myFunction} className="border p-3"></button>
+      <button onClick={myFunction} className="border p-3">Pookie</button>
+      <p>stateVariable:{count}</p>
+      <button onClick={myFunction2} className="border p-3">Pookie Update</button>
     </div>
   );
 }
