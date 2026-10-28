@@ -15,13 +15,21 @@ export default function Comp3() {
   //    console.log("Use Effect Hook Called ", count, name, age);
   //  },[]);
 
+  //this useEffect will be Activated on component Bound and Component Unbound
+
+  // useEffect(function () {
+  //   console.log("Use Effect Hook Called ", count, name, age);
+  //   return () => {
+  //     console.log("Component unmounted !");
+  //   };
+  // }, []);
+
+  // useEffect using conditional Rendering 
   useEffect(function () {
     console.log("Use Effect Hook Called ", count, name, age);
-    return () => {
-       console.log("Component unmounted !");
-     }
-  }, []);
-  
+   
+  }, [name,age]);
+
   function myFunction1() {
     setcount(count + 1);
   }
@@ -29,7 +37,6 @@ export default function Comp3() {
     setage(age + 2);
   }
   function myFunction3() {
-    
     setname("Wenusday");
   }
   return (
