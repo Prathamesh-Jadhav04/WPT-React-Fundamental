@@ -19,7 +19,7 @@ export default function Home() {
       .catch(function (err) {
         console.log(err);
       });
-  });
+  },[]);
   return (
     <div class="w-sm lg:w-6xl mx-auto pt-2 pb-2 grid grid-cols-1 lg:grid-cols-[25%_75%]">
       <aside class="p-3">
