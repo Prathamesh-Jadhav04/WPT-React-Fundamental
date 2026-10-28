@@ -26,18 +26,9 @@ export default function Home() {
         <section>
           <h2 class="uppercase text-center text-2xl pt-3 pb-3">Categories</h2>
           <ul class="border border-gray-300 p-2 rounded-lg">
-            <li>
-              <a href="">Fashion</a>
-            </li>
-            <li>
-              <a href="">Groceries</a>
-            </li>
-            <li>
-              <a href="">Elctronics</a>
-            </li>
-            <li>
-              <a href="">Mobiles</a>
-            </li>
+            {
+              data2 && data2.map(value => <li>{value}</li>)
+            }
           </ul>
         </section>
 
