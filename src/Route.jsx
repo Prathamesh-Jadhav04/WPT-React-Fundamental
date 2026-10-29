@@ -7,6 +7,7 @@ import Comp3 from "./Components/Comp3";
 import Comp4 from "./Components/Comp4";
 import Comp5 from "./Components/Comp5";
 import Pagenotfound from "./Components/Pagenotfound";
+import Comp11 from "./Components/Comp11";
 
 const PROJECTROUTE = (
   <BrowserRouter>
@@ -19,6 +20,7 @@ const PROJECTROUTE = (
         <Route path="comp4" element={<Comp4 />} />
         <Route path="comp5" element={<Comp5 />} />
         <Route path="*" element={<Pagenotfound />} />
+        <Route path="comp11" element={<Comp11/>} />
       </Route>
     </Routes>
   </BrowserRouter>

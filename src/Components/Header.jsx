@@ -30,6 +30,9 @@ function Header() {
           <li class="pl-2 pr-2">
             <Link to="comp5">Label5</Link>
           </li>
+          <li class="pl-2 pr-2">
+            <Link to="comp11">Props Drilling</Link>
+          </li>
         </ul>
       </nav>
     </header>
