@@ -1,6 +1,7 @@
-
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Image from "./Image";
+import ErrorBoundary from "../ErrorBoundary";
 
 export default function Comp34() {
   let [info, setinfo] = useState([]);
@@ -8,7 +9,7 @@ export default function Comp34() {
   useEffect(function () {
     axios
       .get(
-        `https://api.themoviedb.org/3/movie/1058424/credits?api_key=263969180f620b2160c1aea08bba6347&language=en-US`
+        `https://api.themoviedb.org/3/movie/1058424/credits?api_key=263969180f620b2160c1aea08bba6347&language=en-US`,
       )
       .then(function (res) {
         console.log(res.data);
@@ -28,11 +29,9 @@ export default function Comp34() {
         {info &&
           info.map((value) => (
             <div key={value.id} className="text-center">
-              <img
-                src={`https://image.tmdb.org/t/p/w500${value.profile_path}`}
-                alt={value.name}
-                className="w-full h-48 object-cover"
-              />
+              <ErrorBoundary>
+                <Image p1={value.profile_path} />
+              </ErrorBoundary>
               <p>{value.name}</p>
             </div>
           ))}

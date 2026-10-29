@@ -1,7 +1,8 @@
 import React from 'react'
 
-export default function Image() {
-  return (
-    <div>Image</div>
-  )
+export default function Image(props) {
+    if (props.p1 === null) {
+        throw new Error("Image Is Not Found !")
+    }
+  return <img src={"https://image.tmdb.org/t/p/w500"+props.p1} alt="" />;
 }
