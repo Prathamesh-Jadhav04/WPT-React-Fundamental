@@ -3,14 +3,14 @@ import axios from "axios";
 import { useNavigate } from "react-router";
 
 export default function Comp5() {
-  let x1 = useRef();
-  let x2 = useRef();
-  let x3 = useRef();
+  const x1 = useRef(null);
+  const x2 = useRef(null);
+  const x3 = useRef(null);
 
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
-  function myfunction() {
-    let record = {
+  function myFunction() {
+    const record = {
       name: x1.current.value,
       age: x2.current.value,
       place: x3.current.value,
@@ -20,9 +20,11 @@ export default function Comp5() {
       .post("http://localhost:4003/users", record)
       .then(function (res) {
         console.log(res);
+
         x1.current.value = "";
         x2.current.value = "";
         x3.current.value = "";
+
         navigate("/comp4");
       })
       .catch(function (err) {
@@ -53,12 +55,12 @@ export default function Comp5() {
       <input
         ref={x3}
         type="text"
-        placeholder="ENTER PLACE ;}"
+        placeholder="ENTER PLACE!"
         className="border p-2 m-2 rounded"
       />
 
       <button
-        onClick={myfunction}
+        onClick={myFunction}
         className="bg-blue-600 text-white px-5 py-2 m-2 rounded hover:bg-blue-700"
       >
         Click me
