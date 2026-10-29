@@ -42,6 +42,9 @@ function Header() {
             <li className="px-2">
               <Link to="/comp31">State Lift</Link>
             </li>
+            <li className="px-2">
+              <Link to="/comp41">Error Boundry</Link>
+            </li>
           </ul>
         </nav>
       </header>
