@@ -6,6 +6,6 @@ export default function Singlemovie() {
     console.log(Result);
     
   return (
-    <div>Singlemovie</div>
+    <div>Single movie Page</div>
   )
 }
