@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import axios from "axios";
 import Image from "./Image";
 import ErrorBoundary from "../ErrorBoundary";
+import { Link } from "react-router";
 
 export default function Searchmovie() {
   let Record = useSelector((state) => state.search.movieName);
@@ -51,7 +52,9 @@ export default function Searchmovie() {
           <div key={value.id}>
             <ErrorBoundary>
               <Image p1={value.poster_path} />
-              <p>{value.title}</p>
+              <p>
+                <Link to={"/singlemovie/" + value.id}>{value.title}</Link>
+              </p>
               <p>Total Price: ₹{movieValue}</p>
             </ErrorBoundary>
           </div>
