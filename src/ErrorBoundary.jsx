@@ -21,7 +21,7 @@ class ErrorBoundary extends React.Component {
       // You can render any custom fallback UI
       return (
         <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcesVR8RTIgfyoUH_32dyxxWwVoi4ht37acG8SjJfDZQ&s=10"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcesVR8RTIgfyoUH_32dyxxWwVoi4ht37acG8SjJfDZQ&s=10https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzWpV1QzzfXbpR9-7VJih-2jmEeIdNe4gx5-mdZTF59Q&s=10"
           alt=""
         />
       );
