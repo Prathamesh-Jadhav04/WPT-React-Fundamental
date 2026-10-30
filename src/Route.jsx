@@ -32,7 +32,9 @@ const PROJECTROUTE = (
         <Route path="comp41" element={<Comp41 />} />
         <Route path="search" element={<Searchmovie />} />
         <Route path="singlemovie/:id" element={<Singlemovie />} />
-        <Route path="Add To Cart" element={<Cart />} />
+        <Route path="/cart" element={<Cart />} />
+        
+
         <Route path="*" element={<Pagenotfound />} />
       </Route>
     </Routes>
