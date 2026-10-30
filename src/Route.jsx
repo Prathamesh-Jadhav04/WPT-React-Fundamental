@@ -14,6 +14,7 @@ import Comp41 from "./Components/Comp41";
 import Searchmovie from "./Components/Searchmovie";
 import Pagenotfound from "./Components/Pagenotfound";
 import Singlemovie from "./Components/Singlemovie";
+import Cart from "./Components/Cart";
 
 const PROJECTROUTE = (
   <BrowserRouter>
@@ -31,6 +32,7 @@ const PROJECTROUTE = (
         <Route path="comp41" element={<Comp41 />} />
         <Route path="search" element={<Searchmovie />} />
         <Route path="singlemovie/:id" element={<Singlemovie />} />
+        <Route path="Add To Cart" element={<Cart />} />
         <Route path="*" element={<Pagenotfound />} />
       </Route>
     </Routes>

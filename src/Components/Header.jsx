@@ -1,9 +1,10 @@
 import React, { useRef } from "react";
 import { Link, useNavigate } from "react-router";
 import { searchMovie } from "../redux/slices/searchSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 function Header() {
+  let Record = useSelector(state=>state.cart.cartValue);
   let x1 = useRef();
   let navigate = useNavigate();
   let dispatch = useDispatch();
@@ -58,6 +59,9 @@ function Header() {
             <li className="px-2">
               <Link to="/comp41">Error Boundry</Link>
             </li>
+            <li className="px-2">
+              <Link to="/cart">Add To Cart({Record.length})</Link>
+            </li>
 
             <li className="px-2">
               <input
@@ -77,9 +81,9 @@ function Header() {
         </nav>
       </header>
 
-      <figure className="w-full lg:w-6xl mx-auto pt-2 pb-2">
+      <figure className="w-full lg:w-6xl mx-auto pt-2 pb-2 overflow-hidden">
         <img
-          className="w-full h-auto animate__animated animate__rubberBand"
+          className="w-full h-[180px] sm:h-[250px] md:h-[320px] lg:h-[400px] object-cover object-center animate__animated animate__rubberBand"
           src="https://cmsimagesv2.shoppersstop.com/V1_Web_98bcd69c70/V1_Web_98bcd69c70.jpg"
           alt="Watches collection"
         />

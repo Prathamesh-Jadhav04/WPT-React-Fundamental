@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-
+import { addtocart } from "../redux/slices/cartSlice";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router";
 export default function Home() {
+  let dispatch = useDispatch();
+  let Navigate = useNavigate();
   const [data1, setData1] = useState([]);
   const [data2, setData2] = useState([]);
 
@@ -21,6 +25,13 @@ export default function Home() {
       }
     });
   }, []);
+
+  function myFunction(value) {
+
+    dispatch(addtocart(value));
+    Navigate("/cart");
+    
+  }
 
   return (
     <div className="w-full lg:w-6xl mx-auto pt-2 pb-2 grid grid-cols-1 lg:grid-cols-[25%_75%]">
@@ -80,9 +91,9 @@ export default function Home() {
                   <h4 className="pt-2">${value.price}</h4>
                   <p className="pt-2 pb-2">{value.title}</p>
 
-                  <button
+                  <button onClick={()=>{myFunction(value)}}
                     type="button"
-                    className="bg-orange-500 p-2 rounded-lg text-white"
+                    className=" bg-orange-500 p-2 rounded-lg text-white"
                   >
                     Add To Cart
                   </button>
