@@ -1,13 +1,16 @@
 import React, { useRef } from "react";
 import { Link, useNavigate } from "react-router";
 import { searchMovie } from "../redux/slices/searchSlice";
+import { useDispatch } from "react-redux";
 
 function Header() {
   let x1 = useRef();
   let navigate = useNavigate();
+  let dispatch = useDispatch();
 
   function myFunction() {
     if (x1.current.value != "") {
+      dispatch(searchMovie(x1.current.value));
       navigate("/search");
     }
   }
