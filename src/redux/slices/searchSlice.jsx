@@ -10,7 +10,8 @@ export const searchSlice = createSlice({
   initialState,
   reducers: {
     searchMovie: function (state, action) {
-      console.log("Search Movie Called : ", action);
+          console.log("Search Movie Called : ", action);
+          state.movieName = action.payload;
     },
   },
 });
