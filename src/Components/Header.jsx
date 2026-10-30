@@ -1,7 +1,17 @@
-import React from "react";
-import { Link } from "react-router";
+import React, { useRef } from "react";
+import { Link, useNavigate } from "react-router";
+import { searchMovie } from "../redux/slices/searchSlice";
 
 function Header() {
+  let x1 = useRef();
+  let navigate = useNavigate();
+
+  function myFunction() {
+    if (x1.current.value != "") {
+      navigate("/search");
+    }
+  }
+
   return (
     <>
       <header className="w-full lg:w-6xl mx-auto pt-2 pb-2 mt-2 flex flex-col lg:flex-row">
@@ -44,6 +54,21 @@ function Header() {
             </li>
             <li className="px-2">
               <Link to="/comp41">Error Boundry</Link>
+            </li>
+
+            <li className="px-2">
+              <input
+                ref={x1}
+                type="text"
+                className="border cursor-pointer rounded-4xl"
+              />
+
+              <button
+                onClick={myFunction}
+                className="border cursor-pointer rounded-3xl"
+              >
+                Search
+              </button>
             </li>
           </ul>
         </nav>
